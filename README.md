@@ -4,6 +4,30 @@
 
 A simple yet effective web-based note-taking application built with the Django framework. This application allows users to create, view, edit, and delete their personal notes in an organized manner.
 
+## Functionalities
+
+This Django Notes App comes with the following features:
+
+### User Authentication
+*   **User Sign Up:** New users can register for an account to start creating and managing their notes.
+*   **User Login:** Registered users can securely log in to access their personalized notes dashboard.
+*   **User Logout:** Authenticated users can log out of their accounts.
+*   **Page Protection:** Access to notes (viewing, creating, editing, deleting) is restricted to authenticated users. Unauthenticated users attempting to access these pages will be redirected to the login page.
+
+### Notes Management (CRUD Operations)
+*   **Create Notes:** Authenticated users can create new notes with a title and content.
+*   **Read Notes:**
+    *   Users can view a list of all their notes.
+    *   Notes are conveniently grouped and displayed by date.
+    *   For longer notes, a "Show More" / "Show Less" toggle allows users to expand or collapse the content.
+*   **Update Notes:** Users can edit the title and content of their existing notes.
+*   **Delete Notes:** Users can permanently delete notes they no longer need.
+
+### User Interface
+*   **Responsive Design:** The application features a clean and responsive user interface.
+*   **Styled Forms:** User-friendly forms for creating/editing notes, signing up, and logging in.
+*   **Interactive Note Display:** Notes are displayed in a grid layout, and individual notes can be expanded to view full content.
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -67,27 +91,42 @@ Follow these steps to get your development environment set up:
 ## Project Structure
 
 ```
-notes/                  # This is your main project root (e.g., d:\Learning Django\notes)
-├── notes/              # Django project configuration directory
-│   ├── init .py
+Django-Notes-App/
+├── notes/                  # Django project configuration directory (contains settings.py)
+│   ├── __init__.py
 │   ├── asgi.py
-│   ├── settings.py     # Main project settings
-│   ├── urls.py         # Project-level URL routing
+│   ├── settings.py         # Main project settings
+│   ├── urls.py             # Project-level URL routing
 │   └── wsgi.py
-├── noteapp/            # Your Django application for notes
-│   ├── migrations/     # Database migration scripts
-│   │   └── init .py
-│   ├── init .py
-│   ├── admin.py        # Admin site configurations for this app
-│   ├── apps.py         # App configuration
-│   ├── models.py       # Database models for this app
-│   ├── tests.py        # Tests for this app
-│   └── views.py        # Views (request handlers) for this app
-├── static/             # Optional: Project-wide static files (CSS, JS, images)
-├── templates/          # Optional: Project-wide HTML templates
-├── db.sqlite3          # SQLite database file
-├── manage.py           # Django's command-line utility
-└── requirements.txt    # Project dependencies
+├── noteapp/                # Django application for notes
+│   ├── __init__.py
+│   ├── admin.py            # Admin site configurations for this app
+│   ├── apps.py             # App configuration
+│   ├── forms.py            # Contains NoteForm and custom UserCreationForm (for signup)
+│   ├── models.py           # Database models for this app (e.g., Note model)
+│   ├── urls.py             # App-level URL routing for noteapp
+│   ├── views.py            # Views (request handlers) for this app
+│   ├── migrations/         # Database migration scripts
+│   │   ├── __init__.py
+│   │   └── 0001_initial.py # (and other generated migration files)
+│   ├── static/             # Static files for the 'noteapp' application
+│   │   ├── css/
+│   │   │   └── style.css   # Main stylesheet
+│   │   └── js/
+│   │       └── main.js     # JavaScript for dynamic functionalities (e.g., show more)
+│   └── templates/
+│       ├── noteapp/        # Templates specific to the 'noteapp' application
+│       │   ├── base.html          # Base template for common layout
+│       │   ├── note_list.html     # Lists all notes for the user
+│       │   ├── add_note.html      # Form to add a new note
+│       │   ├── edit_note.html     # Form to edit an existing note
+│       │   └── signup.html        # Custom user registration page
+│       └── registration/     # Templates for Django's built-in auth views (overridden)
+│           └── login.html         # Custom user login page
+├── db.sqlite3              # SQLite database file (default for development)
+├── manage.py               # Django's command-line utility
+├── requirements.txt        # File listing project dependencies
+└── README.md               # This file: project description, setup, etc.
 
 ```
 ## Usage
