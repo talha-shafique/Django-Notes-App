@@ -1,8 +1,10 @@
-![App Image01](./assets/p1.png)
+![App Image01](./assets/signup.png)
+![App Image01](./assets/login.png)
+![App Image01](./assets/home.png)
 
 # Django Notes App
 
-A simple yet effective web-based note-taking application built with the Django framework. This application allows users to create, view, edit, and delete their personal notes in an organized manner.
+A simple yet effective web-based note-taking application built with the Django framework.
 
 ## Functionalities
 
