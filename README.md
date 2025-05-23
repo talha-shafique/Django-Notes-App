@@ -1,5 +1,4 @@
-![App Image01](./assets/signup.png)
-![App Image01](./assets/login.png)
+![App Image01](./assets/combine.png)
 ![App Image01](./assets/home.png)
 
 # Django Notes App
